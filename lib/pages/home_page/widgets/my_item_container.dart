@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:video_audio_call/call_page.dart';
+import 'package:video_audio_call/pages/call_page.dart';
 import 'package:video_audio_call/pages/home_page/widgets/app_helper.dart';
 
 import '../../../model/call_model.dart';

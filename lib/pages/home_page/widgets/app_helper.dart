@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:video_audio_call/application/call_cubit/call_cubit.dart';
 
-import '../../../call_page.dart';
+import '../../call_page.dart';
 
 abstract class AppHelper {
   AppHelper._();
