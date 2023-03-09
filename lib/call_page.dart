@@ -1,5 +1,9 @@
 import 'package:agora_uikit/agora_uikit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:video_audio_call/pages/home_page/home_page.dart';
+
+import 'application/call_cubit/call_cubit.dart';
 
 class VideoCallPage extends StatefulWidget {
   final String channelName;
@@ -48,7 +52,12 @@ class _VideoCallPageState extends State<VideoCallPage> {
             AgoraVideoButtons(
               client: client,
               onDisconnect: () {
-                Navigator.pop(context);
+                Navigator.pushAndRemoveUntil(
+                    context, MaterialPageRoute(builder: (_) =>
+                    BlocProvider(
+                      create: (context) => CallCubit(),
+                      child: HomePage(),
+                    )), (route) => false);
               },
             ),
           ],

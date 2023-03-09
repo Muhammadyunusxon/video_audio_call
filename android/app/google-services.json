@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880928106422",
+    "project_id": "call-app-uz",
+    "storage_bucket": "call-app-uz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880928106422:android:6426c55290494651ef4317",
+        "android_client_info": {
+          "package_name": "com.example.video_audio_call"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880928106422-kl44jic65ptaabuvcn4c11dvfgjcl3ok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU8M5Vvib4rPBjQsf1LxFcGWvVbMRBspg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880928106422-kl44jic65ptaabuvcn4c11dvfgjcl3ok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

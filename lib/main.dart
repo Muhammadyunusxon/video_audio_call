@@ -1,9 +1,14 @@
-import 'package:agora_uikit/agora_uikit.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:video_audio_call/pages/home_page/home_page.dart';
 
-import 'dragable_example.dart';
+import 'application/call_cubit/call_cubit.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -13,51 +18,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        title: 'Flutter Demo', home: DraggableScrollBarDemo());
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final AgoraClient client = AgoraClient(
-    agoraConnectionData: AgoraConnectionData(
-      appId: "457e3f501bba48279f5c31ac8a5b5f67",
-      channelName: "test",
-    ),
-  );
-
-  @override
-  void initState() {
-    super.initState();
-    initAgora();
-  }
-
-  void initAgora() async {
-    await client.initialize();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            AgoraVideoViewer(client: client),
-            AgoraVideoButtons(client: client),
-          ],
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      home: BlocProvider(
+        create: (context) => CallCubit(),
+        child: const HomePage(),
       ),
     );
   }
